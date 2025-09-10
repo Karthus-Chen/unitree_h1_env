@@ -22,6 +22,14 @@ conda install conda-forge::python-orocos-kdl
 # 使用方法
 ```bash
 #均在项目文件夹下运行 ~/unitree_h1_env$ xxxxx
+
+#遥操作
+#终端 1
+cd xrobotoolkit-teleop
+python3 scripts/simulation/teleop_unitree_h1.py  --scale-factor 1
+#终端 2
+python3 DataCollecter/h1_teleop_mujoco.py
+
 #录制数据集
 python3 DataCollecter/h1_record.py
 
