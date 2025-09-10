@@ -11,6 +11,7 @@ pip install h5py -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install tqdm -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install einops -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install zmq -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install torch==2.8.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install torchvision==0.23.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 
