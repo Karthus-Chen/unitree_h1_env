@@ -1,0 +1,15 @@
+mujoco
+numpy
+meshcat
+placo
+ur_rtde
+dynamixel-sdk
+rospkg
+torch
+dex_retargeting
+pyrealsense2
+opencv-python
+tyro
+
+[dev]
+black

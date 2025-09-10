@@ -1,0 +1,67 @@
+Metadata-Version: 2.4
+Name: xrobotoolkit_teleop
+Version: 1.0.3
+Summary: Teleoperation demo with MuJoCo and UR5 robot
+Author-email: Zhigen <zhaozhigen@gmail.com>
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: mujoco
+Requires-Dist: numpy
+Requires-Dist: meshcat
+Requires-Dist: placo
+Requires-Dist: ur_rtde
+Requires-Dist: dynamixel-sdk
+Requires-Dist: rospkg
+Requires-Dist: torch
+Requires-Dist: dex_retargeting
+Requires-Dist: pyrealsense2
+Requires-Dist: opencv-python
+Requires-Dist: tyro
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+
+# Robot-Teleop Ubuntu 22.04
+基于https://github.com/XR-Robotics 开发
+## 1.安装XRoboToolkit-PC-Service
+https://github.com/XR-Robotics/XRoboToolkit-PC-Service/releases/download/v1.0.0/XRoboToolkit_PC_Service_1.0.0_ubuntu_22.04_amd64.deb
+```bash
+sudo dpkg -i XRoboToolkit_PC_Service_1.0.0_ubuntu_22.04_amd64.deb
+```
+## 2.安装Pico客户端
+- **下载并安装 Pico APK  https://github.com/XR-Robotics/XRoboToolkit-Unity-Client/releases/download/v1.1.1/XRoboToolkit-PICO-1.1.1.apk**
+- **将Pico连接至电脑，将APK拖入Pico Download文件夹**
+- **打开Pico 安装APK**
+
+## 3.配置电脑客户端
+打开robot_teleop 配置环境
+```bash
+bash setup_conda.sh --conda xr_teleop
+conda activate xr_teleop
+bash setup_conda.sh --install
+```
+安装grpc以及其他工具
+```
+pip install -i https://pypi.doubanio.com/simple protobuf==5.28.0 grpcio==1.65.4  grpcio-tools==1.65.4 ruckig==0.15.3
+```
+
+- **运行示例**
+```bash
+#开启顺序是 
+1.XRRoboToolkit-PC-service
+2.teleop 程序
+3.pico 程序
+
+#确保Pico和电脑在同一网段，打开Pico的app
+#第一次开启需要打开用deb安装的 XRRoboToolkit-PC-service
+#在Pico选择电脑IP，选择要传输的内容，勾选send,点击Connect
+#长按侧扳机进行遥操作，松开停止，按A初始化
+
+#PC-service
+. /opt/apps/roboticsservice/runService.sh 
+
+# --scale-factor是尺寸缩放比例
+
+#仿真
+python3 scripts/simulation/teleop_unitree_h1.py  --scale-factor 1
+```
