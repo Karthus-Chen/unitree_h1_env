@@ -9,6 +9,7 @@ MUJOCO_LOG.TXT
 *~
 
 # Data files
+*.so
 dataset/
 ckpt_models/
 
