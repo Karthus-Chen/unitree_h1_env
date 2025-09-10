@@ -1,0 +1,17 @@
+# MuJoCo specific
+MUJOCO_LOG.TXT
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Data files
+dataset/
+ckpt_models/
+
+# Environment
+.env
+.venv
